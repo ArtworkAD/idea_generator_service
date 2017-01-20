@@ -1,0 +1,39 @@
+{
+  "name": "idea_generator_service",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Idea generator service for business model idea generator",
+  "keywords": [],
+  "dependencies": {
+    "koa": "^2.0.0-alpha.7",
+    "koa-router": "^7.1.0",
+    "koa-logger": "^2.0.1",
+    "koa-bodyparser": "^3.2.0",
+    "koa-json-error": "^3.1.0",
+    "kcors": "^2.2.0",
+    "monk": "^3.1.2",
+    "ajv": "^4.7.0",
+    "dotenv": "^4.0.0",
+    "lodash": "^4.15.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "jasmine": "^2.5.2",
+    "jasmine-co": "^1.2.1",
+    "supertest": "^2.0.0",
+    "nyc": "^8.3.1"
+  },
+  "scripts": {
+    "test": "node_modules/nyc/bin/nyc.js node --harmony_async_await node_modules/jasmine/bin/jasmine.js",
+    "debug": "node --harmony_async_await debug app.js",
+    "start": "node --harmony_async_await --harmony app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/artjomzabelin/idea_generator_service.git"
+  },
+  "author": "artjomzabelin",
+  "license": "ICS"
+}
