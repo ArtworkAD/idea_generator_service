@@ -63,6 +63,10 @@ Example generate idea:
 }
 ```
 
+#### ```[GET]/idea```
+
+Accepts only GET operation.
+
 ## ENV
 
  - PORT=somePortToRunOn
