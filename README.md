@@ -1,12 +1,14 @@
 # Idea generator webservice
 
-Stack: nodejs, mongodb
+Stack: nodejs, mongodb. See package.json to see what frameworks are used.
 
 ## REST API
 
 ### Component
 
-```[GET,POST,PUT,DELETE]/component``` accepts CRUD operations
+#### ```[GET,POST,PUT,DELETE]/component```
+
+Accepts CRUD operations (Create, Read, Update, Delete).
 
 Example component:
 
@@ -25,13 +27,13 @@ Example component:
 
 ### Generator
 
-```[POST]/generator/random``` generate random ideas
+#### ```[POST]/generator/random```
 
-Following parameters must be provided:
+Generate random ideas. Following parameters must be provided:
 
 ```
 {
-	"product": "Parfum",
+	"product": "SomeProduct",
 	"number_of_ideas": 1,
 	"number_of_components_per_idea": 2
 }
