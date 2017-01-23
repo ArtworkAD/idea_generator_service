@@ -32,7 +32,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/artjomzabelin/idea_generator_service.git"
+    "url": "https://github.com/ArtworkAD/idea_generator_service"
   },
   "author": "artjomzabelin",
   "license": "ICS"

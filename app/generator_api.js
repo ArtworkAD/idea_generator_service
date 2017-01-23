@@ -2,7 +2,6 @@
 const _ = require('lodash');
 const app = require('../app.js');
 const schema = require('./schema');
-
 const router = app.router;
 const components = app.database.get('components');
 const ideas = app.database.get('ideas');

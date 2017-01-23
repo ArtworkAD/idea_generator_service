@@ -1,5 +1,3 @@
-const _ = require('lodash');
-
 module.exports = {
 	/**
 	 * Create absolute url by simply concataning protocol, host and url

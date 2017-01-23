@@ -39,20 +39,13 @@ app
 	.use(router.allowedMethods());
 
 router
-// Component routes
+	// Component routes
 	.get('component.list', '/component', component_api.list)
 	.get('component.get', '/component/:id', component_api.get)
 	.post('component.create', '/component', component_api.create)
 	.put('component.update', '/component/:id', component_api.update)
 	.delete('component.delete', '/component/:id', component_api.delete)
 	// Idea routes
-	.post('generator.random', '/generator/random', generator_api.random)
-	// Top level routes
-	.get('/', (ctx, next) => {
-		ctx.body = {
-			component_url: util.toAbsoluteUrl(ctx, router.url('component.list')),
-			generator_random_url: util.toAbsoluteUrl(ctx, router.url('generator.random'))
-		};
-	});
+	.post('generator.random', '/generator/random', generator_api.random);
 
 app.listen(process.env.PORT || 3000);

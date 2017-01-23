@@ -1,13 +1,7 @@
-/**
- * The component api is used for CRUD (Create, Read, Update, Delete) operations
- * on business model components.
- */
-
 // Load libraries
 const app = require('../app.js');
 const schema = require('./schema');
 const util = require('./util.js');
-
 const router = app.router;
 const components = app.database.get('components');
 
