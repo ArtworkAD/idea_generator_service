@@ -5,17 +5,18 @@
   "description": "Idea generator service for business model idea generator",
   "keywords": [],
   "dependencies": {
+    "ajv": "^4.7.0",
+    "azure-storage": "^1.4.0",
+    "dotenv": "^4.0.0",
+    "jsonexport": "^1.5.2",
+    "kcors": "^2.2.0",
     "koa": "^2.0.0-alpha.7",
-    "koa-router": "^7.1.0",
-    "koa-logger": "^2.0.1",
     "koa-bodyparser": "^3.2.0",
     "koa-json-error": "^3.1.0",
-    "kcors": "^2.2.0",
-    "monk": "^3.1.2",
-    "ajv": "^4.7.0",
-    "dotenv": "^4.0.0",
+    "koa-logger": "^2.0.1",
+    "koa-router": "^7.1.0",
     "lodash": "^4.15.0",
-    "jsonexport": "^1.5.2"
+    "monk": "^3.1.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

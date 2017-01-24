@@ -6,7 +6,7 @@ Stack: nodejs, mongodb. See package.json to see what frameworks are used.
 
 ### Component
 
-#### ```[GET,POST,PUT,DELETE]/component```
+#### `[GET,POST,PUT,DELETE]/component`
 
 Accepts CRUD operations (Create, Read, Update, Delete).
 
@@ -27,19 +27,26 @@ Example component:
 
 ### Generator
 
-#### ```[POST]/generator/random```
+#### `[GET]/generator/evaluated`
+
+This endpoint may be called when a batch of ideas was evaluated. To be more
+specific, the evaluation service will call this endpoint when it is informed by crowdflower that a job was completed. In that case the evaluated ideas may
+be feed into the machine learning process.
+
+#### `[POST]/generator/random`
 
 Generate random ideas. Following parameters must be provided:
 
 ```
 {
-	"product": "SomeProduct",
-	"number_of_ideas": 1,
-	"number_of_components_per_idea": 2
+    "product": "SomeProduct",
+    "number_of_ideas": 1,
+    "number_of_components_per_idea": 2
 }
 ```
 
 Example generate idea:
+
 ```
 {
     "_id" : ObjectId("5881fd39f807ac600834273b"),
@@ -63,12 +70,12 @@ Example generate idea:
 }
 ```
 
-#### ```[GET]/idea?product=XY&evaluation=true/false```
+#### `[GET]/idea?product=XY&evaluation=true/false`
 
 Accepts only GET operation. One can get evaluated ideas by product.
 
 ## ENV
 
- - PORT=somePortToRunOn
- - DB_HOST=someDbHost
- - DB_NAME=business_model_idea_generator
+- PORT=somePortToRunOn
+- DB_HOST=someDbHost
+- DB_NAME=business_model_idea_generator
