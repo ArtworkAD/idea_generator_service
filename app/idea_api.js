@@ -8,13 +8,14 @@ const ideas = app.database.get('ideas');
 module.exports.list = async ctx => {
 	var query = {};
 
-	if (ctx.query.evaluated && ctx.query.product) {
-		query = {
-			product: ctx.query.product,
-			evaluation: {
-				$exists: true
-			}
+	if (ctx.query.evaluated) {
+		query.evaluation = {
+			$exists: true
 		};
+	}
+
+	if (ctx.query.product) {
+		query.product = ctx.query.product;
 	}
 
 	var i = await ideas.find(query);
