@@ -19,7 +19,7 @@ module.exports.list = async ctx => {
 
 	var i = await ideas.find(query);
 
-	if (ctx.headers.accept === 'text/csv') {
+	if (ctx.headers.accept === 'text/csv' || ctx.query.format === 'text/csv') {
 		// Convert _id from ObjectId to String
 		i.forEach(idea => {
 			idea._id = idea._id.toString();
