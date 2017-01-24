@@ -8,7 +8,7 @@ module.exports.list = async ctx => {
 	ctx.body = await ideas.find({});
 };
 
-// Get specific idae
+// Get specific idea
 module.exports.get = async(ctx) => {
 	ctx.body = await ideas.findOne({
 		_id: ctx.params.id
