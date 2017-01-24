@@ -26,20 +26,16 @@ validator.addSchema(schema.generator_random, 'generator_random');
  */
 module.exports.random = async ctx => {
 	if (validator.validate('generator_random', ctx.request.body)) {
-
 		const params = ctx.request.body;
 		const list = await components.find({});
 		ctx.body = [];
-
 		for (var i = 0; i < params.number_of_ideas; i++) {
 			var idea = {
 				product: params.product
 			};
-
 			list.forEach(component => {
 				idea[component.name] = _.sampleSize(component.values, params.number_of_components_per_idea);
 			});
-
 			idea = await ideas.insert(idea);
 			ctx.body.push(idea);
 		}

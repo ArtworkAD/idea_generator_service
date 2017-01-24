@@ -63,9 +63,9 @@ Example generate idea:
 }
 ```
 
-#### ```[GET]/idea```
+#### ```[GET]/idea?product=XY&evaluation=true/false```
 
-Accepts only GET operation.
+Accepts only GET operation. One can get evaluated ideas by product.
 
 ## ENV
 
