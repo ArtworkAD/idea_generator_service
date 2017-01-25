@@ -1,7 +1,7 @@
 // Load libraries
-const app = require('../app.js');
-const schema = require('./schema');
-const util = require('./util.js');
+const app = require('../../app.js');
+const schema = require('../share/schema');
+const util = require('../share/util.js');
 const router = app.router;
 const components = app.database.get('components');
 

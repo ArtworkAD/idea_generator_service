@@ -1,18 +1,19 @@
 var app = require('../../app.js');
-var request = require('supertest').agent(app.app.listen());
+var request = require('supertest')
+  .agent(app.app.listen());
 
-describe('generator rest api test suit', function() {
+describe('generator rest api test suit', function () {
 
-	it('should not generate if parameters do not match schema', function*() {
-		yield request
-			.post('/generator/random')
-			.type('form')
-			.send({})
-			.set('Accept', /application\/json/)
-			.expect(422);
-	});
+  it('should not generate if parameters do not match schema', function* () {
+    yield request
+      .post('/generator/random')
+      .type('form')
+      .send({})
+      .set('Accept', /application\/json/)
+      .expect(422);
+  });
 
-	it('should generate 10 ideas', function*() {
+  it('should generate 10 ideas', function* () {
 
     const params = {
       product: 'Foobar',
@@ -20,14 +21,28 @@ describe('generator rest api test suit', function() {
       number_of_components_per_idea: 2
     };
 
-		const ideas = yield request
-			.post('/generator/random')
-			.type('json')
-			.send(params)
-			.set('Accept', /application\/json/)
-			.expect('Content-Type', /application\/json/)
-			.expect(200);
+    const ideas = yield request
+      .post('/generator/random')
+      .type('json')
+      .send(params)
+      .set('Accept', /application\/json/)
+      .expect('Content-Type', /application\/json/)
+      .expect(200);
 
-		expect(ideas.body.length).toBe(10);
-	});
+    expect(ideas.body.length)
+      .toBe(10);
+  });
+
+  it('should upload evaluated ideas to azure cloud', function* () {
+    yield request
+      .get('/generator/evaluated')
+      .expect(200);
+  });
+
+  it('should predict an unevaluated idea', function* () {
+    yield request
+      .get('/predict-random')
+      .expect('Content-Type', 'application/json; charset=utf-8')
+      .expect(200);
+  });
 });

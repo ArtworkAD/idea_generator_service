@@ -1,5 +1,5 @@
 // Load libraries
-const app = require('../app.js');
+const app = require('../../app.js');
 const ideas = app.database.get('ideas');
 
 // List all ideas by product name or evaluation status.

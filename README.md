@@ -74,6 +74,14 @@ Example generate idea:
 
 Accepts only GET operation. One can get evaluated ideas by product.
 
+#### `[GET]/idea/:id`
+
+Get a specific idea.
+
+#### `[GET]/predict-random?product=Perfum&number_of_components_per_idea=1`
+
+Generate a prediction for some random idea. This method is just for playing around with the prediction api.
+
 ## ENV
 
 - PORT=somePortToRunOn

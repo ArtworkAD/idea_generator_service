@@ -8,14 +8,13 @@ const logger = require('koa-logger');
 const body = require('koa-bodyparser');
 const error = require('koa-json-error');
 const cors = require('kcors');
-const util = require('./app/util.js');
 
 // Setup
 const router = module.exports.router = require('koa-router')();
 const database = module.exports.database = require('monk')(process.env.DB_HOST + '/' + process.env.DB_NAME);
-const component_api = require('./app/component_api.js');
-const generator_api = require('./app/generator_api.js');
-const idea_api = require('./app/idea_api.js');
+const component_api = require('./app/api/component_api.js');
+const generator_api = require('./app/api/generator_api.js');
+const idea_api = require('./app/api/idea_api.js');
 const app = module.exports.app = new koa();
 
 // Setup app's middleware
@@ -46,6 +45,7 @@ router
   .get('idea.get', '/idea/:id', idea_api.get)
   // Generator routes
   .post('generator.random', '/generator/random', generator_api.random)
-  .get('generator.evaluated', '/generator/evaluated', generator_api.evaluated);
+  .get('generator.evaluated', '/generator/evaluated', generator_api.evaluated)
+  .get('generator.predictRandom', '/predict-random', generator_api.predictRandom);
 
 app.listen(process.env.PORT || 3000);
