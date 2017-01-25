@@ -87,3 +87,8 @@ Generate a prediction for some random idea. This method is just for playing arou
 - PORT=somePortToRunOn
 - DB_HOST=someDbHost
 - DB_NAME=business_model_idea_generator
+- AZURE_STORAGE_ACCOUNT_NAME=storageAccount
+- AZURE_STORAGE_ACCOUNT_KEY=storageAccountKey
+- AZURE_STORAGE_BLOB_CONTAINER=blogContainer
+- AZURE_ML_PREDICTION_WEBSERVICE=predictionWebserviceUrl
+- AZURE_ML_PREDICTION_WEBSERVICE_KEY=predictionWebserviceKey
