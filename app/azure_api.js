@@ -14,7 +14,7 @@ module.exports = {
       publicAccessLevel: 'blob'
     }, function (error, result, response) {
       if (!error) {
-        blobService.createBlockBlobFromText(process.env.AZURE_STORAGE_BLOB_CONTAINER, 'ideas', csv, function (error, result, response) {
+        blobService.createBlockBlobFromText(process.env.AZURE_STORAGE_BLOB_CONTAINER, 'ideas.csv', csv, function (error, result, response) {
           if (!error) {
             return result;
           } else {
