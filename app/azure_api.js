@@ -1,5 +1,4 @@
 // Load libraries
-const request = require('request-promise');
 const azure = require('azure-storage');
 
 module.exports = {
